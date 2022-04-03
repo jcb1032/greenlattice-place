@@ -34,6 +34,8 @@ However, sometimes your browser will cache the overlay image for faster loading 
 2. Run the `dithering.py` script* in the same folder as the saved `lattice_full.png` image
 3. Upload `lattice_full.png` and the newly generated `lattice_overlay.png` to github
 
+**You can also submit a PR with just the `lattice_full.png`, others can dither it for you**
+
 *\*You will need to install Pillow and NumPy for the script to work:*
 `py -m pip install NumPy>=1.22`
 `py -m pip install Pillow>=9.0`
