@@ -28,6 +28,13 @@ The overlay will be automatically updated by our team, and you shouldn't have to
 
 However, sometimes your browser will cache the overlay image for faster loading times. You can go to [this link](https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice_overlay.png) and click the refresh button (F5) while holding shift to re-cache the image.
 
+### Contributing
+
+1. Open `lattice_full.png` in photoshop, make changes, and save over the original, with the same name
+2. Run the `dithering.py` (`py dithering.py`) script in the same folder as the saved `lattice_full.png` image
+3. Upload `lattice_full.png` and the newly generated `lattice_overlay.png` to github
+
+
 ### Credits
 
 The r/osuplace team for the original code: _oralekin_ & _exdeejay_
