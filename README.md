@@ -16,7 +16,7 @@ Install the Userscript:
 
 [lattice.user.js](https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice.user.js)
 
-## Other Stuff
+#
 
 ### Mobile
 
