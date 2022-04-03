@@ -18,11 +18,11 @@ Install the Userscript:
 
 #
 
+#
+
 ## Mobile
 
 Sorry, the script is unavailable for mobile users.
-
-#
 
 ## Credits
 
