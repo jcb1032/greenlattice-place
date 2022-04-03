@@ -7,6 +7,8 @@
 // @match        https://hot-potato.reddit.com/embed*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @grant        none
+// @updateURL    https://github.com/jcb1032/greenlattice-place/raw/main/lattice.user.js
+// @downloadURL  https://github.com/jcb1032/greenlattice-place/raw/main/lattice.user.js
 // ==/UserScript==
 
 if (window.top !== window.self) {
