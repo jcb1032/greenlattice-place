@@ -32,7 +32,7 @@ However, sometimes your browser will cache the overlay image for faster loading 
 
 The r/osuplace team for the original code: _oralekin_ & _exdeejay_
 
-The r/greenlattice team for our modifications: [_artillect#8709_](https://github.com/artillect), _jcb#1032_ & [_jumpinglizard#4404_](https://github.com/BlueRedBlueYellow)
+The r/greenlattice team for our modifications: [_artillect#8709_](https://github.com/artillect), _jcb#1032_, & [_jumpinglizard#4404_](https://github.com/BlueRedBlueYellow)
 
 ### Links
 
