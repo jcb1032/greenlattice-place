@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Green Lattice Overlay
 // @namespace    https://reddit.com/r/greenlattice
-// @version      0.1
+// @version      0.2
 // @description  overlay for r/place
 // @author       FOR OSU: oralekin, exdeejay | FOR GL: artillect#8709, jcb#1032, jumpinglizard#4404
 // @match        https://hot-potato.reddit.com/embed*
