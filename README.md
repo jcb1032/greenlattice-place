@@ -28,7 +28,7 @@ Sorry, the script is unavailable for mobile users.
 
 The r/osuplace team for the original code: _oralekin_ & _exdeejay_
 
-The r/greenlattice team for our version: _artillect#8709_, _jcb#1032_ & _jumpinglizard#4404_
+The r/greenlattice team for our modifications: _artillect#8709_, _jcb#1032_ & _jumpinglizard#4404_
 
 ## Links
 
