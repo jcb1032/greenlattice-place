@@ -22,6 +22,12 @@ Install the Userscript:
 
 Sorry, the script is unavailable for mobile users.
 
+### Updates
+
+The overlay will be automatically updated by our team, and you shouldn't have to change anything.
+
+However, sometimes your browser will cache the overlay image for faster loading times. You can go to [this link](https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice_overlay.png) and click the refresh button (F5) while holding shift to re-cache the image.
+
 ### Credits
 
 The r/osuplace team for the original code: _oralekin_ & _exdeejay_
