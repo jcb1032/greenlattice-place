@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Green Lattice Overlay
 // @namespace    https://reddit.com/r/greenlattice
-// @version      0.3
+// @version      0.4
 // @description  overlay for r/place
 // @author       FOR OSU: oralekin, exdeejay | FOR GL: artillect#8709, jcb#1032, jumpinglizard#4404
 // @match        https://hot-potato.reddit.com/embed*
@@ -37,10 +37,10 @@ if (window.top !== window.self) {
             window.history.oldReplaceState = window.history.replaceState;
             window.history.replaceState = function (a, b, c, d) {
               let coordsEl = document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-coordinates")[0].shadowRoot.children[0];
-              let zoomLevel = coordsEl.textContent.replace(/^ \(\d+,\d+\) (\d\.\d)x $/, "$1");
+              let zoomLevel = coordsEl.textContent.replace(/^ \(\d+,\d+\) (\d\.\d+)x $/, "$1");
 
               // disable when you're zoomed out
-              if (zoomLevel == "0.1" || zoomLevel == "0.2") {
+              if (parseInt(zoomLevel) <= 0.2) {
                 i.style.display = "none";
               } else {
                 if (i.getAttribute("data-display") == "1") i.style.display = "block";
