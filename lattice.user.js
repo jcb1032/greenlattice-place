@@ -40,7 +40,7 @@ if (window.top !== window.self) {
               let zoomLevel = coordsEl.textContent.replace(/^ \(\d+,\d+\) (\d\.\d+)x $/, "$1");
 
               // disable when you're zoomed out
-              if (parseInt(zoomLevel) <= 0.2) {
+              if (parseFloat(zoomLevel) <= 0.2) {
                 i.style.display = "none";
               } else {
                 if (i.getAttribute("data-display") == "1") i.style.display = "block";
