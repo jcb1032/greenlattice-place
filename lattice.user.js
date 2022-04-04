@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Green Lattice Overlay
 // @namespace    https://reddit.com/r/greenlattice
-// @version      0.2
+// @version      0.3
 // @description  overlay for r/place
 // @author       FOR OSU: oralekin, exdeejay | FOR GL: artillect#8709, jcb#1032, jumpinglizard#4404
 // @match        https://hot-potato.reddit.com/embed*
@@ -22,7 +22,7 @@ if (window.top !== window.self) {
           (function () {
             const i = document.createElement("img");
             i.src = "https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice_overlay.png";
-            i.style = "position:absolute;left:0;top:0;image-rendering:pixelated;width:2000px;height:1000px;";
+            i.style = "position:absolute;left:0;top:0;image-rendering:pixelated;width:2000px;height:2000px;";
             i.setAttribute("data-display", "1");
 
             // toggle on key press
