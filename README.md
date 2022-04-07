@@ -8,7 +8,7 @@ Install one of the following extensions for your browser.
 
 [Chrome (TamperMonkey)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 
-[Firefox (ViolentMonkey)](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (note: TamperMonkey __will not__ work, you have to use ViolentMonkey.)
+[Firefox (ViolentMonkey)](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)
 
 ## Step 2
 
@@ -17,10 +17,6 @@ Install the Userscript:
 [lattice.user.js](https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice.user.js)
 
 #
-
-### Mobile
-
-Sorry, the script is unavailable for mobile users.
 
 ### Updates
 
@@ -43,14 +39,12 @@ However, sometimes your browser will cache the overlay image for faster loading 
 
 ### Credits
 
-The r/osuplace team for the original code: _oralekin_ & _exdeejay_
-
-The r/greenlattice team for our modifications: [_artillect#8709_](https://github.com/artillect), _jcb#1032_, & [_jumpinglizard#4404_](https://github.com/BlueRedBlueYellow)
+[_artillect#8709_](https://github.com/artillect), _jcb#1032_, & [_jumpinglizard#4404_](https://github.com/BlueRedBlueYellow)
 
 ### Links
 
-[r/place](https://www.reddit.com/r/place)
+[rplace.tk](https://rplace.tk/)
 
 [r/greenlattice](https://www.reddit.com/r/greenlattice)
 
-[GL Discord](https://discord.gg/D38szSvvX3)
+[Green Lattice Discord](https://discord.gg/D38szSvvX3)
