@@ -1,58 +1,55 @@
 // ==UserScript==
 // @name         Green Lattice Overlay
-// @namespace    https://reddit.com/r/greenlattice
-// @version      0.5
+// @namespace    https://github.com/jcb1032/greenlattice-place
+// @version      0.6
 // @description  overlay for r/place
-// @author       FOR OSU: oralekin, exdeejay | FOR GL: artillect#8709, jcb#1032, jumpinglizard#4404
-// @match        https://hot-potato.reddit.com/embed*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
+// @author       artillect#8709, jcb#1032, jumpinglizard#4404
+// @match        https://rplace.tk/
+// @icon         https://rplace.tk/favicon.png
 // @grant        none
 // @updateURL    https://github.com/jcb1032/greenlattice-place/raw/main/lattice.user.js
 // @downloadURL  https://github.com/jcb1032/greenlattice-place/raw/main/lattice.user.js
 // ==/UserScript==
 
-if (window.top !== window.self) {
-  window.addEventListener(
-    "load",
-    () => {
-      document
-        .getElementsByTagName("mona-lisa-embed")[0]
-        .shadowRoot.children[0].getElementsByTagName("mona-lisa-canvas")[0]
-        .shadowRoot.children[0].appendChild(
-          (function () {
-            const i = document.createElement("img");
-            i.src = "https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice_overlay.png";
-            i.style = "position:absolute;left:0;top:0;image-rendering:pixelated;width:2000px;height:2000px;";
-            i.setAttribute("data-display", "1");
+// options
+let OVERLAY_IMAGE = "https://raw.githubusercontent.com/jcb1032/greenlattice-place/main/lattice_overlay.png";
+let CANVAS_SIZE = [2000, 2000];
+let MIN_ZOOM_LEVEL = 0.2; // minimum zoom level to display overlay
 
-            // toggle on key press
-            document.addEventListener("keypress", (e) => {
-              if (e.code.toLowerCase() == "space") {
-                i.style.display = i.getAttribute("data-display") == "1" ? "none" : "block";
-                i.setAttribute("data-display", 1 - parseInt(i.getAttribute("data-display")));
-              }
-            });
+// create the overlay image
+const overlayImage = new Image();
+const overlayStyles = {
+	position: "absolute",
+	imageRendering: "pixelated",
+	width: CANVAS_SIZE[0] + "px",
+	height: CANVAS_SIZE[1] + "px",
+	pointerEvents: "none",
+};
 
-            // intercept URL changes
-            window.history.oldReplaceState = window.history.replaceState;
-            window.history.replaceState = function (a, b, c, d) {
-              let coordsEl = document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-coordinates")[0].shadowRoot.children[0];
-              let zoomLevel = coordsEl.textContent.replace(/^ \(\d+,\d+\) (\d\.\d+)x $/, "$1");
+for (let rule in overlayStyles) overlayImage.style[rule] = overlayStyles[rule];
+overlayImage.src = OVERLAY_IMAGE;
 
-              // disable when you're zoomed out
-              if (parseFloat(zoomLevel) <= 0.2) {
-                i.style.display = "none";
-              } else {
-                if (i.getAttribute("data-display") == "1") i.style.display = "block";
-              }
+// make the overlay togglable
+let displayOverlay = true;
+document.addEventListener("keypress", (e) => {
+	if (e.code.toLowerCase() != "space") return;
+	displayOverlay = !displayOverlay;
+	overlayImage.style.display = displayOverlay ? "block" : "none";
+});
 
-              window.history.oldReplaceState(a, b, c, d);
-            };
+window.addEventListener("load", () => {
+	// add the overlay to the page
+	let overlayParent = document.querySelector("#canvparent1"); // hijacking the snoo for our overlay
 
-            return i;
-          })()
-        );
-    },
-    false
-  );
-}
+	overlayParent.style.zIndex = "4";
+	overlayParent.append(overlayImage);
+
+	// intercept position/scale changes
+	let oldPos = pos;
+	pos = () => {
+		oldPos(); // do the normal things
+
+		if (localStorage.z < MIN_ZOOM_LEVEL / 5) overlayImage.style.display = "none";
+		else if (displayOverlay) overlayImage.style.display = "block";
+	};
+});
